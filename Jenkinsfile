@@ -7,18 +7,14 @@ pipeline {
         timestamps()
     }
 
-    parameters {
-        gitParameter(
-            name: 'RELEASE_TAG',
-            type: 'PT_TAG',
-            defaultValue: '',
-            description: 'Select the release tag to deploy',
-            tagFilter: 'v*',
-            sortMode: 'DESCENDING_SMART',
-            selectedValue: 'NONE',
-            quickFilterEnabled: true
-        )
-    }
+   parameters {
+    string(
+        name: 'RELEASE_TAG',
+        defaultValue: '',
+        description: 'Enter a Git tag, e.g. release/v1.0.1',
+        trim: true
+    )
+}
 
     stages {
         stage('Validate selection') {
