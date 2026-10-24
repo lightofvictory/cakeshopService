@@ -54,12 +54,11 @@ pipeline {
         }
 
         stage('Build') {
-            steps {
-                // Example for a Node/React project:
-                sh 'npm ci'
-                sh 'npm run build'
-            }
-        }
+    steps {
+        sh 'npm ci --legacy-peer-deps'
+        sh 'npm run build'
+    }
+}
 
         stage('Deploy') {
             steps {
