@@ -8,17 +8,17 @@ pipeline {
     }
 
     parameters {
-        gitParameter(
-            name: 'RELEASE_TAG',
-            type: 'PT_TAG',
-            defaultValue: '',
-            description: 'Select the release tag to deploy',
-            tagFilter: 'v*',
-            sortMode: 'DESCENDING_SMART',
-            selectedValue: 'NONE',
-            quickFilterEnabled: true
-        )
-    }
+    gitParameter(
+        name: 'RELEASE_TAG',
+        type: 'PT_TAG',
+        defaultValue: '',
+        description: 'Select the release tag to deploy',
+        tagFilter: 'release/v*',
+        sortMode: 'DESCENDING_SMART',
+        selectedValue: 'NONE',
+        quickFilterEnabled: true
+    )
+}
 
     stages {
         stage('Validate selection') {
