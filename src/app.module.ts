@@ -11,7 +11,7 @@ import { OrdersModule } from './orders/orders.module';
 import { CategoriesModule } from './categories/categories.module';
 import { CustomersModule } from './customers/customers.module';
 import { SettingsModule } from './settings/settings.module';
-import { DemosModule } from './demos/demos.module';
+// import { DemosModule } from './demos/demos.module';
 
 let mongodInstance: MongoMemoryServer | null = null;
 
@@ -66,7 +66,7 @@ let mongodInstance: MongoMemoryServer | null = null;
     CategoriesModule,
     CustomersModule,
     SettingsModule,
-    DemosModule,
+    // DemosModule,
   ],
 })
 export class AppModule {}
