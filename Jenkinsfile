@@ -62,10 +62,9 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                // Replace with your existing deployment command.
-                sh './deploy.sh'
-            }
-        }
+    steps {
+        sh 'bash ./deploy.sh'
+    }
+}
     }
 }
