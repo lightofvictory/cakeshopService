@@ -61,6 +61,19 @@ pipeline {
             }
         }
 
+        stage('Check Kubernetes access') {
+    steps {
+        sh '''
+            whoami
+            command -v docker
+            command -v kind
+            command -v kubectl
+            docker ps
+            kubectl --context kind-learning get nodes
+        '''
+    }
+}
+
         stage('Deploy') {
     steps {
         sh 'bash ./deploy.sh'
