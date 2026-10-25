@@ -44,8 +44,8 @@ async function bootstrap() {
   SwaggerModule.setup('api/docs', app, document);
   SwaggerModule.setup('docs', app, document);
 
-  const port = process.env.PORT || 3000;
-  await app.listen(port);
+  const port = Number(process.env.PORT || 8080);
+  await app.listen(port, '0.0.0.0');
   console.log(`🚀 NestJS Cakeshop Backend server running on http://localhost:${port}`);
   console.log(`📚 Interactive Swagger API Documentation available at http://localhost:${port}/api/docs`);
 }
